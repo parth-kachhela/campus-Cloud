@@ -1,0 +1,27 @@
+.navbar {
+  background-color: #e2e2e2;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links {
+  text-decoration: none;
+  color: black;
+  margin: 0 10px;
+}
