@@ -1,0 +1,88 @@
+/* Signup.css */
+
+/* Container for centering and adding padding */
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4; /* light gray background */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 380px;
+  padding: 30px;
+  margin: 50px auto; /* Center it on the page */
+  margin-bottom: 150px;
+  margin-top: 140px;
+}
+
+/* Title Styling */
+h1 {
+  color: #333;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Input Styling */
+input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-top: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+/* Input focus effect */
+input:focus {
+  border-color: #6c757d; /* gray border on focus */
+  box-shadow: 0 0 5px rgba(108, 117, 125, 0.5);
+  outline: none;
+}
+
+/* Button Styling */
+button {
+  width: 100%;
+  padding: 14px 0;
+  background-color: #6c757d; /* gray button */
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #5a6268;
+  transform: translateY(-2px); /* slight elevation */
+}
+
+/* Button active effect */
+button:active {
+  transform: translateY(1px); /* slight inward press effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .signup-container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  input,
+  button {
+    padding: 10px 12px;
+  }
+}

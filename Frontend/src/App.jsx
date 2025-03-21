@@ -7,6 +7,8 @@ import Notes from "./Pages/Notes.jsx";
 import Upload from "./Pages/Upload.jsx";
 import Contact from "./Pages/Contact.jsx";
 import About from "./Pages/AboutUs.jsx";
+import Signup from "./Pages/Signup.jsx";
+import Login from "./Pages/Login.jsx";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/upload" element={<Upload />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
       <Footer />
