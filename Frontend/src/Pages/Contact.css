@@ -1,0 +1,127 @@
+/* Body styling to set up the background and centering */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4; /* Light gray background for the page */
+  padding: 20px;
+}
+
+/* Container for the contact form */
+.contact-form {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px; /* Max width for larger screens */
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* Contact header */
+.con-h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333; /* Dark gray for the header */
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Paragraph styling */
+.con-p,
+.con-email,
+.con-mo {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #666; /* Lighter gray for text */
+  text-align: center;
+}
+
+/* Input and Textarea styling */
+.input-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.inp,
+.inp-area {
+  padding: 12px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px;
+  background-color: #fff; /* White background */
+  transition: border-color 0.3s ease;
+}
+
+.inp:focus,
+.inp-area:focus {
+  outline: none;
+  border-color: #888; /* Darker border on focus */
+  box-shadow: 0 0 5px rgba(170, 170, 170, 0.6); /* Light gray glow effect */
+}
+
+/* Button styling */
+.btn {
+  padding: 12px;
+  font-size: 1.1rem;
+  background-color: #888; /* Gray background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: #777; /* Darker gray on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .con-h1 {
+    font-size: 1.8rem;
+  }
+
+  .inp,
+  .inp-area {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .con-h1 {
+    font-size: 1.5rem;
+  }
+
+  .inp,
+  .inp-area {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+    padding: 8px;
+  }
+}
