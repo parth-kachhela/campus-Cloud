@@ -17,14 +17,11 @@ const Navbar = () => {
         <Link to="/upload" className="links">
           Upload
         </Link>
-        <Link to="/dashboard" className="links">
-          Dashboard
-        </Link>
         <Link to="/contact" className="links">
           Contact
         </Link>
         <Link to="/about" className="links">
-          About
+          About-Us
         </Link>
         <Link to="/login" className="links login-button">
           Login <FontAwesomeIcon icon={faUser} />

@@ -1,0 +1,132 @@
+/* Center the form and make it look more elegant */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 20px;
+  background-color: #f4f4f4; /* Light gray background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* Max width to keep the form from stretching too wide */
+  box-sizing: border-box;
+  margin-left: 450px;
+}
+
+/* Style for the header */
+.form-h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333; /* Dark gray for header */
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Styling the input fields */
+.inp-box {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background-color: #fff; /* White background for input fields */
+}
+
+.inp-box:focus {
+  outline: none;
+  border-color: #aaa; /* Slightly darker gray on focus */
+}
+
+/* Styling the file input */
+.inp-file {
+  margin-top: 15px;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px;
+  width: 100%;
+  background-color: #fff; /* White background for file input */
+}
+
+/* Button styling */
+.btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #888; /* Dark gray background */
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #777; /* Slightly darker gray on hover */
+}
+
+/* Add some space between inputs */
+.inp-box,
+.inp-file,
+.btn {
+  margin-bottom: 15px;
+}
+
+/* Extra styling for focus effect */
+.inp-box:focus,
+.inp-file:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 5px rgba(170, 170, 170, 0.6); /* Light gray glow on focus */
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 15px;
+    max-width: 90%;
+  }
+
+  .form-h1 {
+    font-size: 1.5rem;
+  }
+
+  .inp-box,
+  .inp-file,
+  .btn {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .btn {
+    padding: 10px;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .form-h1 {
+    font-size: 1.2rem;
+  }
+
+  .inp-box,
+  .inp-file,
+  .btn {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .btn {
+    padding: 10px;
+  }
+}
