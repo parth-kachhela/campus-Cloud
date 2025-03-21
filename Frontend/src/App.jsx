@@ -6,7 +6,7 @@ import Home from "./Pages/home";
 import Notes from "./Pages/Notes.jsx";
 import Upload from "./Pages/Upload.jsx";
 import Contact from "./Pages/Contact.jsx";
-// import About from "./pages/About";
+import About from "./Pages/AboutUs.jsx";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
           <Route path="/notes" element={<Notes />} />
           <Route path="/upload" element={<Upload />} />
           <Route path="/contact" element={<Contact />} />
-          {/* <Route path="/about" element={<About />} /> */}
+          <Route path="/about" element={<About />} />
         </Routes>
       </main>
       <Footer />

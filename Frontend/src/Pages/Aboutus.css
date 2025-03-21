@@ -1,0 +1,71 @@
+/* Container for the About Us page */
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px;
+  background-color: #f9f9f9; /* Light gray background for the page */
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Styling for the About header */
+.ab-h1 {
+  font-size: 2.5rem; /* Adjusted for elegance */
+  font-family: "Roboto", sans-serif;
+  color: #333; /* Darker gray for the header */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase; /* Adding uppercase for a modern touch */
+  letter-spacing: 1px; /* Slight letter spacing for elegance */
+}
+
+/* Styling for the paragraphs */
+.pera {
+  font-size: 1.1rem;
+  font-family: "Roboto", sans-serif;
+  color: #555; /* Slightly lighter gray for text */
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.6; /* Improve readability */
+  max-width: 700px; /* Control text width for readability */
+}
+
+/* Add a subtle box-shadow for the overall container */
+.about-container {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; /* Rounded corners for a soft look */
+  background-color: #fff; /* White background for the content */
+}
+
+/* Add a subtle gradient background to give some depth */
+body {
+  background: linear-gradient(to right, #e0e0e0, #ffffff);
+  font-family: "Roboto", sans-serif;
+}
+
+/* Responsive Design - Make adjustments for smaller screens */
+@media (max-width: 768px) {
+  .ab-h1 {
+    font-size: 2rem; /* Smaller font size on smaller screens */
+  }
+
+  .pera {
+    font-size: 1rem; /* Slightly smaller font size on mobile */
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ab-h1 {
+    font-size: 1.7rem; /* Smaller font size for very small screens */
+  }
+
+  .pera {
+    font-size: 0.95rem; /* Adjust text size for readability */
+    padding: 0 15px; /* Padding to avoid text being too close to the edge */
+  }
+}
