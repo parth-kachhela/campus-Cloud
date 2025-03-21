@@ -12,7 +12,7 @@ const Navbar = () => {
       </Link>
       <div className="nav-links">
         <Link to="/notes" className="links">
-          Notes
+          My Notes
         </Link>
         <Link to="/upload" className="links">
           Upload
