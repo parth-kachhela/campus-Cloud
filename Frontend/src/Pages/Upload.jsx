@@ -3,7 +3,6 @@ import "./Upload.css";
 
 const Upload = () => {
   const [file, setFile] = useState(null);
-  const [user, setUser] = useState("");
   const [topicName, setTopicName] = useState("");
   const [description, setDescription] = useState("");
   const [noteType, setNoteType] = useState("");
@@ -12,38 +11,49 @@ const Upload = () => {
     setFile(event.target.files[0]);
   };
 
-  const handleUpload = () => {
-    if (!file || !user || !topicName || !description || !noteType) {
+  const handleUpload = async () => {
+    // Validate all fields
+    if (!file || !topicName || !description || !noteType) {
       alert("Please fill all fields and select a file to upload");
       return;
     }
 
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("user", user);
-    formData.append("topicName", topicName);
-    formData.append("description", description);
-    formData.append("noteType", noteType);
+    try {
+      // Create FormData object
+      const formData = new FormData();
+      formData.append("file", file); // Append the file
+      formData.append("topicName", topicName); // Append topic name
+      formData.append("description", description); // Append description
+      formData.append("noteType", noteType); // Append note type
 
-    fetch("http://localhost:8080/api/upload", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => alert("File uploaded successfully!"))
-      .catch((error) => alert("Error uploading file"));
+      // Send the data to the backend
+      const response = await fetch("http://localhost:8080/api/file/upload", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`, // Include the auth token
+        },
+        body: formData, // Send FormData directly
+      });
+
+      // Check if the request was successful
+      if (!response.ok) {
+        // Handle non-JSON responses
+        const errorText = await response.text();
+        throw new Error(errorText || "Failed to upload note and file");
+      }
+
+      const data = await response.json();
+      console.log("Upload successful:", data);
+      alert("Note and file uploaded successfully!");
+    } catch (error) {
+      console.error("Error:", error);
+      alert(error.message || "Error uploading note and file");
+    }
   };
 
   return (
     <div className="form-container">
       <h1 className="form-h1">Upload Notes</h1>
-      <input
-        type="text"
-        placeholder="User"
-        value={user}
-        onChange={(e) => setUser(e.target.value)}
-        className="inp-box"
-      />
       <input
         type="text"
         placeholder="Topic Name"
@@ -69,7 +79,12 @@ const Upload = () => {
         <option value="Notes">Notes</option>
         <option value="Question Paper">Question Paper</option>
       </select>
-      <input type="file" onChange={handleFileChange} className="inp-file" />
+      <input
+        type="file"
+        onChange={handleFileChange}
+        className="inp-file"
+        name="file"
+      />
       <button onClick={handleUpload} className="btn">
         Upload
       </button>

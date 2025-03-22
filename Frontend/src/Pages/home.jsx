@@ -57,9 +57,9 @@ const Home = () => {
         <div className="contributors">
           <h2 className="sub-title">Top Contributors</h2>
           <div className="contributors-grid">
-            <div className="contributor-card">Alice</div>
-            <div className="contributor-card">Bob</div>
-            <div className="contributor-card">Charlie</div>
+            <div className="contributor-card">parth</div>
+            <div className="contributor-card">keval</div>
+            <div className="contributor-card">raj</div>
           </div>
         </div>
 

@@ -5,8 +5,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 0;
 }
 
 .logo {
@@ -26,29 +24,4 @@
   text-decoration: none;
   color: black;
   margin: 0 10px;
-}
-
-.login-button {
-  background-color: #918f8f;
-  color: white;
-  font-size: 13px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  margin-left: 10px;
-  transition: 0.3s ease-in-out;
-}
-
-.signup-button {
-  background-color: #918f8f;
-  color: white;
-  font-size: 13px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  margin-left: 10px;
-  transition: 0.3s ease-in-out;
-}
-
-.login-button:hover,
-.signup-button:hover {
-  opacity: 0.8;
 }

@@ -4,9 +4,9 @@ import axios from "axios";
 const Profile = () => {
   const [userDetails, setUserDetails] = useState({
     email: "",
-    university: "",
-    program: "",
-    subjects: "",
+    university: "atmiya university",
+    program: "Bsc it",
+    subjects: "sad , dbms",
   });
 
   const [isEditing, setIsEditing] = useState(false);
@@ -19,10 +19,10 @@ const Profile = () => {
     // Fetch user details when the component mounts
     const fetchUserDetails = async () => {
       try {
-        const response = await axios.put("http://localhost:5000/user/details", {
+        const response = await axios.get("http://localhost:8080/api/user/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
-        setUserDetails(response.data.user);
+        setUserDetails(response.data);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching user details:", error);
@@ -40,7 +40,7 @@ const Profile = () => {
   const handleSave = async () => {
     try {
       const response = await axios.put(
-        "http://localhost:5000/details",
+        "http://localhost:8080/api/user/details",
         {
           university: userDetails.university,
           program: userDetails.program,
@@ -71,7 +71,7 @@ const Profile = () => {
             <input
               type="text"
               name="university"
-              value={userDetails.university}
+              value={"parth@gmail.com"}
               onChange={handleChange}
               className="p-2 border rounded w-1/2"
               disabled={!isEditing}
@@ -82,7 +82,7 @@ const Profile = () => {
             <input
               type="text"
               name="program"
-              value={userDetails.program}
+              value={"Bsc it"}
               onChange={handleChange}
               className="p-2 border rounded w-1/2"
               disabled={!isEditing}
@@ -93,7 +93,7 @@ const Profile = () => {
             <input
               type="text"
               name="subjects"
-              value={userDetails.subjects}
+              value={"sad , dbms"}
               onChange={handleChange}
               className="p-2 border rounded w-1/2"
               disabled={!isEditing}

@@ -1,7 +1,7 @@
 /* Signup.css */
 
 /* Container for centering and adding padding */
-.signup-container {
+.login-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
