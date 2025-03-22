@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <Link to="/" className="logo">
-        Noteshub
+        CampusCloud
       </Link>
       <div className="nav-links">
         <Link to="/notes" className="links">
@@ -22,6 +22,9 @@ const Navbar = () => {
         </Link>
         <Link to="/about" className="links">
           About-Us
+        </Link>
+        <Link to="/profile" className="links">
+          Profile
         </Link>
         <Link to="/login" className="links login-button">
           Login <FontAwesomeIcon icon={faUser} />

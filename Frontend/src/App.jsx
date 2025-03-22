@@ -9,6 +9,7 @@ import Contact from "./Pages/Contact.jsx";
 import About from "./Pages/AboutUs.jsx";
 import Signup from "./Pages/Signup.jsx";
 import Login from "./Pages/Login.jsx";
+import Profile from "./Pages/Profile.jsx";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </main>
       <Footer />

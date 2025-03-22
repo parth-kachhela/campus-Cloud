@@ -1,22 +1,77 @@
-import React from "react";
-import "tailwindcss";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./Home.css"; // Import the CSS file for the styling
 
 const Home = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [notes, setNotes] = useState([
+    "Math Notes",
+    "Physics Notes",
+    "Chemistry Notes",
+    "Biology Notes",
+  ]);
+
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const filteredNotes = notes.filter((note) =>
+    note.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
-    <div className="home-container text-center p-10 bg-gray-100 min-h-screen flex flex-col justify-center items-center">
-      <h1 className="text-5xl font-extrabold text-blue-600">
-        Welcome to Noteshub
-      </h1>
-      <p className="text-xl text-gray-700 mt-4 max-w-md">
-        A platform to share and access study materials easily.
-      </p>
-      <div className="mt-8 flex space-x-4">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition duration-300">
-          Explore Notes
-        </button>
-        <button className="bg-green-500 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg transition duration-300">
-          Upload Notes
-        </button>
+    <div className="home-container">
+      <div className="content-wrapper">
+        <h1 className="title">Welcome to CampusCloud</h1>
+        <p className="description">
+          A platform to share and access study materials easily.
+        </p>
+
+        {/* Search Bar */}
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder="Search Notes..."
+            value={searchQuery}
+            onChange={handleSearch}
+            className="search-input"
+          />
+        </div>
+
+        {/* Search Results */}
+        <div className="search-results">
+          {filteredNotes.length > 0 ? (
+            <ul>
+              {filteredNotes.map((note, index) => (
+                <li key={index} className="note-item">
+                  {note}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>No matching notes found.</p>
+          )}
+        </div>
+
+        {/* Top Contributors */}
+        <div className="contributors">
+          <h2 className="sub-title">Top Contributors</h2>
+          <div className="contributors-grid">
+            <div className="contributor-card">Alice</div>
+            <div className="contributor-card">Bob</div>
+            <div className="contributor-card">Charlie</div>
+          </div>
+        </div>
+
+        {/* Buttons */}
+        <div className="buttons-container">
+          <Link to="/notes" className="button explore-btn">
+            Explore Notes
+          </Link>
+          <Link to="/upload" className="button upload-btn">
+            Upload Notes
+          </Link>
+        </div>
       </div>
     </div>
   );
