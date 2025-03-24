@@ -19,7 +19,7 @@ const Profile = () => {
     // Fetch user details when the component mounts
     const fetchUserDetails = async () => {
       try {
-        const response = await axios.put("http://localhost:5000/user/details", {
+        const response = await axios.put("http://localhost:8080/details", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUserDetails(response.data.user);

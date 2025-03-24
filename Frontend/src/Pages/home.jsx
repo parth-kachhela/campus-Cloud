@@ -4,20 +4,47 @@ import "./Home.css"; // Import the CSS file for the styling
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedNote, setSelectedNote] = useState(null); // Track the selected note for eBook display
+
+  // Demo data for notes
   const [notes, setNotes] = useState([
-    "Math Notes",
-    "Physics Notes",
-    "Chemistry Notes",
-    "Biology Notes",
+    "Math Notes - Algebra",
+    "Math Notes - Calculus",
+    "Physics Notes - Quantum Mechanics",
+    "Physics Notes - Thermodynamics",
+    "Chemistry Notes - Organic Chemistry",
+    "Chemistry Notes - Inorganic Chemistry",
+    "Biology Notes - Genetics",
+    "Biology Notes - Cell Biology",
+    "Computer Science Notes - Data Structures",
+    "Computer Science Notes - Algorithms",
+    "History Notes - World War II",
+    "History Notes - Ancient Civilizations",
+    "Literature Notes - Shakespeare",
+    "Literature Notes - Modern Poetry",
+    "Economics Notes - Microeconomics",
+    "Economics Notes - Macroeconomics",
   ]);
 
+  // Handle search input change
   const handleSearch = (event) => {
     setSearchQuery(event.target.value);
   };
 
+  // Filter notes based on search query
   const filteredNotes = notes.filter((note) =>
     note.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  // Handle note click to show eBook demo
+  const handleNoteClick = (note) => {
+    setSelectedNote(note);
+  };
+
+  // Close the eBook demo
+  const closeEbookDemo = () => {
+    setSelectedNote(null);
+  };
 
   return (
     <div className="home-container">
@@ -43,15 +70,38 @@ const Home = () => {
           {filteredNotes.length > 0 ? (
             <ul>
               {filteredNotes.map((note, index) => (
-                <li key={index} className="note-item">
+                <li
+                  key={index}
+                  className="note-item"
+                  onClick={() => handleNoteClick(note)} // Handle note click
+                >
                   {note}
                 </li>
               ))}
             </ul>
           ) : (
-            <p>No matching notes found.</p>
+            <p className="no-results">No matching notes found.</p>
           )}
         </div>
+
+        {/* eBook Demo */}
+        {selectedNote && (
+          <div className="ebook-demo-overlay">
+            <div className="ebook-demo">
+              <h2>{selectedNote}</h2>
+              <p>Here is a demo eBook for {selectedNote}.</p>
+              <iframe
+                src="https://drive.google.com/file/d/1eX7-ROW4U6684_wuUKvFZQdNl_q0np29/view?usp=sharing"
+                width="100%"
+                height="500px"
+                title="eBook Demo"
+              ></iframe>
+              <button onClick={closeEbookDemo} className="close-btn">
+                Close
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Top Contributors */}
         <div className="contributors">

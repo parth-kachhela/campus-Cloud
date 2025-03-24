@@ -27,7 +27,7 @@ const Upload = () => {
       formData.append("noteType", noteType); // Append note type
 
       // Send the data to the backend
-      const response = await fetch("http://localhost:8080/api/file/upload", {
+      const response = await fetch("http://localhost:8080/api/upload", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`, // Include the auth token
